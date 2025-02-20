@@ -1,0 +1,8 @@
+{
+	"watch": ["src"],
+	"ext": "ts,json",
+	"ignore": ["node_modules"],
+	"exec": "tsx watch --trace-warnings src/index.ts",
+	"legacyWatch": true,
+	"delay": "500"
+}
