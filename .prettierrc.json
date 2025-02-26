@@ -3,5 +3,6 @@
 	"singleAttributePerLine": true,
 	"semi": true,
 	"singleQuote": true,
-	"useTabs": true
+	"useTabs": true,
+	"endOfLine": "lf"
 }

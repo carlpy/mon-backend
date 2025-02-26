@@ -8,4 +8,24 @@ services:
       - .:/app:delegated
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:monpassword@localhost:5432/monitor_management  # Adjust for PostgreSQL
     command: ["npm", "run", "dev"]
+
+  db:
+    image: postgres  # Change to postgres:15 for PostgreSQL
+    container_name: db_container
+    restart: always
+    environment:
+      POSTGRES_DB: monitor_management
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: monpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data  # Use `/var/lib/postgresql/data` for PostgreSQL
+
+volumes:
+  db_data:
