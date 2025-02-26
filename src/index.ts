@@ -1,11 +1,16 @@
 import express from 'express';
-import cookieParser from 'cookie-parser';
+
+// middlewares
+/* import cookieParser from 'cookie-parser'; */
 import cors from 'cors';
 import morgan from 'morgan';
 
-/* import "dotenv/config";
+// routes
+import routes from './routes/index.ts';
 
-const { PORT } = process.env; */
+import 'dotenv/config';
+
+const { PORT } = process.env;
 
 const app = express();
 
@@ -14,7 +19,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(cors({ origin: '*' }));
 
-app.listen(3000, () => {
-	console.log('Listening from ', 3000);
+// routes zone
+app.use(routes);
+
+app.listen(PORT, () => {
+	console.log('Listening from ', PORT);
 	console.log('Hello world');
 });
