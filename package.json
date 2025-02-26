@@ -4,7 +4,9 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"dev": "nodemon"
+		"dev": "nodemon",
+		"push-db": "drizzle-kit push",
+		"migrate-db": "drizzle-kit migrate"
 	},
 	"keywords": [],
 	"author": "",

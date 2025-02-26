@@ -11,7 +11,7 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: postgres://postgres:monpassword@localhost:5432/monitor_management  # Adjust for PostgreSQL
+      DATABASE_URL: postgres://postgres:monpassword@db:5432/monitor_management  # Adjust for PostgreSQL
     command: ["npm", "run", "dev"]
 
   db:
